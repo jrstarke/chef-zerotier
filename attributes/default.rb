@@ -26,5 +26,5 @@ else
   default['zerotier']['installer_url'] = 'https://www.zerotier.com/dist/ZeroTierOneInstaller-linux-x64'
 end
 
-# default['zerotier']['network_ids']
-default['zerotier']['executable_path'] = '/tmp/zerotier_installer' 
+default['zerotier']['binary_path'] = '/usr/bin/zerotier-cli'
+default['zerotier']['networks'] = []
