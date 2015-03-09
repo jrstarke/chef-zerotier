@@ -1,42 +1,32 @@
-# zerotier-cookbook
+zerotier-cookbook
+=================
 
-TODO: Enter the cookbook description here.
+A cookbook for installing and configuring ZeroTier
 
-## Supported Platforms
 
-TODO: List your supported platforms.
+Attributes
+----------
 
-## Attributes
+The `zerotier` recipe includes a variable for configuring the networks to join
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['zerotier']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+`node['zerotier']['networks'] = []`
 
-## Usage
+By setting this to an array of networks to join, this will be done automatically.
 
-### zerotier::default
+License and Author
+==================
+Author:: Jamie Starke (<github@jamiestarke.com>)
 
-Include `zerotier` in your node's `run_list`:
+Copyright:: 2011 Jamie Starke.
 
-```json
-{
-  "run_list": [
-    "recipe[zerotier::default]"
-  ]
-}
-```
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-## License and Authors
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
