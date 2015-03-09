@@ -17,19 +17,25 @@
 # limitations under the License.
 #
 
-remote_file node['zerotier']['executable_path'] do
-	source ['zerotier']['installer_url']
-	mode 0755
+# We only need to install zerotier if the binary is not available yet
+unless File.exist?(node['zerotier']['binary_path'])
+  require 'tempfile'
+
+  installer_path = Tempfile.new('zerotier-installer').path
+
+  remote_file installer_path do
+    source node['zerotier']['installer_url']
+    mode 0755
+  end
+
+  execute "install zerotier" do
+    command installer_path
+  end
 end
 
-execute "install zerotier" do
-  command node['zerotier']['executable_path']
+# Attempt to join any networks specified
+node['zerotier']['networks'].each do | network |
+  execute "zerotier join %s" % network do
+    command "zerotier-cli join %s" % network
+  end
 end
-
-if node['zerotier'].attribute?('networks')
-	node['zerotier']['networks'].each do | networks |
-		execute "zerotier join %s" % networks do
-			command "zerotier-cli join %s" % node
-		end
-	end
-end	
