@@ -37,5 +37,6 @@ end
 node['zerotier']['networks'].each do | network |
   execute "zerotier join %s" % network do
     command "zerotier-cli join %s" % network
+    retries 5
   end
 end
