@@ -19,11 +19,11 @@
 
 case node['kernel']['machine']
 when 'x86_64'
-  default['zerotier']['installer_url'] = 'https://www.zerotier.com/dist/ZeroTierOneInstaller-linux-x64'
+  default['zerotier']['installer_url'] = 'https://download.zerotier.com/dist/ZeroTierOneInstaller-linux-x64-1_0_4'
 when 'x86'
-  default['zerotier']['installer_url'] = 'https://www.zerotier.com/dist/ZeroTierOneInstaller-linux-x84'
+  default['zerotier']['installer_url'] = 'https://download.zerotier.com/dist/ZeroTierOneInstaller-linux-x86-1_0_4'
 else
-  default['zerotier']['installer_url'] = 'https://www.zerotier.com/dist/ZeroTierOneInstaller-linux-x64'
+  default['zerotier']['installer_url'] = 'https://download.zerotier.com/dist/ZeroTierOneInstaller-linux-x64-1_0_4'
 end
 
 default['zerotier']['binary_path'] = '/usr/bin/zerotier-cli'
