@@ -1,3 +1,7 @@
+# 0.1.3
+
+Ensures that the zerotier-one service is started after the new installer
+
 # 0.1.2
 
 Update of the installer_url to version 1.0.4
