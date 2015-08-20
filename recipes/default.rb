@@ -33,6 +33,10 @@ unless File.exist?(node['zerotier']['binary_path'])
   end
 end
 
+service "zerotier-one" do
+  action :start
+end
+
 # Attempt to join any networks specified
 node['zerotier']['networks'].each do | network |
   execute "zerotier join %s" % network do
